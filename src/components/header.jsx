@@ -5,8 +5,8 @@ const Header = () => {
     event.target.classList.toggle("active");
   };
   return (
-    <header className="fixed flex w-full justify-between items-center md:px-10 px-4 py-4 bg-[#e0e0db]">
-      <button onClick={scroll.scrollToTop} className="text-3xl">Allan Kirui</button>
+    <header className="fixed flex w-full justify-between items-center md:px-10 px-4 py-4 bg-[#e0e0db] opacity-80">
+      <button onClick={scroll.scrollToTop} className="text-3xl font-semibold">Allan Kirui</button>
       <div className="hidden md:flex justify-between items-center gap-6 text-lg font-light">
         <Link to="services" smooth={true} duration={500} >Services</Link>
         <Link to="Linkbout" smooth={true} duration={500}>About</Link>
