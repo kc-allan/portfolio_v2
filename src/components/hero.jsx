@@ -59,7 +59,7 @@ const Hero = () => {
             problem-solving.
           </p>
           <p>
-            Based in Nairobi, Kenya, I’m a curious. I’ve honed my skills in
+            Based in Nairobi, Kenya, I’m a curious tech enthusiast. I’ve honed my skills in
             various programming languages and frameworks. But beyond the code,
             I’m a dedicated learner and an avid explorer. I thrive on the
             excitement of new challenges, from developing groundbreaking

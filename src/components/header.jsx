@@ -3,7 +3,7 @@ const Header = () => {
     event.target.classList.toggle("active");
   };
   return (
-    <header className="fixed flex w-full justify-between items-center px-10 py-4 bg-[#e0e0db]">
+    <header className="fixed flex w-full justify-between items-center md:px-10 px-4 py-4 bg-[#e0e0db]">
       <a href="/" className="text-3xl">Allan Kirui</a>
       <div className="hidden md:flex justify-between items-center gap-6 text-lg font-light">
         <a href="#services">Services</a>
