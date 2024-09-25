@@ -1,13 +1,13 @@
 import Header from "./components/header";
-import Hero from "./components/hero";
-import Services from "./pages/services";
+import HomePage from "./pages/homepage";
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <Hero />
-      <Services />
+    <div className="app flex">
+      <div className="flex lg:flex-row flex-col lg:justify-between lg:overflow-hidden">
+        <Header />
+        <HomePage />
+      </div>
     </div>
   );
 }
