@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <div className="lg:overflow-y-scroll lg:p-8 p-4 lg:w-2/3 w-full lg:py-16">
       <h3 className="lg:hidden font-bold text-sm my-8">ABOUT</h3>
-      <div id="about" className="space-y-4 text-gray-400 p-8">
+      <div id="about" className="space-y-4 text-gray-400 lg:p-8">
         <p>
           Hey there! I’m Allan, a software engineer with a passion for creating
           innovative solutions and a love for problem-solving.
