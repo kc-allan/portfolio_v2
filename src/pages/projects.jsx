@@ -35,14 +35,10 @@ const Projects = () => {
       {projects.map((project, index) => (
         <div
           key={index}
-          className="my-4 p-4 flex hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gray-800 hover:opacity-90 cursor-pointer rounded-md"
+          className="my-4 p-4 flex lg:flex-row flex-col hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gray-800 hover:opacity-90 cursor-pointer rounded-md"
         >
-          <img
-            className="w-1/3 object-contain h-full hover:scale-150 transition-all duration-300 mr-4"
-            src={project.thumbnail}
-            alt="Thumbnail"
-          />
-          <div className="w-2/3">
+          
+          <div className="lg:w-2/3">
             <a
               id="project-link"
               href="/"
@@ -78,7 +74,13 @@ const Projects = () => {
                 </span>
               ))}
             </div>
+
           </div>
+          <img
+            className="lg:w-1/3 object-containh-full m-4 lg:hover:scale-150 transition-all duration-300 mr-4"
+            src={project.thumbnail}
+            alt="Thumbnail"
+          />
         </div>
       ))}
     </div>
