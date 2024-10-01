@@ -79,7 +79,7 @@ const Header = () => {
           <LinkedIn />
         </a>
         <a
-          href="https://www.upwork.com/freelancers/~01353b004ba45b9a74?mp_source=share"
+          href="https://calendly.com/kiruiallan"
           target="_blank"
           rel="noopener noreferrer"
           className="p-2 py-4 px-8 rounded-full m-2 bg-blue-900 font-bold text-white"
