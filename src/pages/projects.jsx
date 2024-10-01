@@ -77,7 +77,7 @@ const Projects = () => {
 
           </div>
           <img
-            className="lg:w-1/3 object-containh-full m-4 lg:hover:scale-150 transition-all duration-300 mr-4"
+            className="lg:w-1/3 object-containh-full my-4 mx-2 lg:hover:scale-150 transition-all duration-300 mr-4"
             src={project.thumbnail}
             alt="Thumbnail"
           />

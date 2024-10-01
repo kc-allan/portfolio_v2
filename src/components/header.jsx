@@ -25,14 +25,6 @@ const Header = () => {
           innovations
         </p>
       </div>
-      <a
-        href="https://www.upwork.com/freelancers/~01353b004ba45b9a74?mp_source=share"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="p-2 py-4 px-8 rounded-full m-2 bg-blue-900 font-bold text-white"
-      >
-        Book
-      </a>
       <nav class="nav px-10 hidden lg:block" aria-label="In-page jump links">
         <ul class="mt-8 w-max">
           <li>
@@ -87,12 +79,12 @@ const Header = () => {
           <LinkedIn />
         </a>
         <a
-          onClick={handleDownload}
-          href={`${process.env.PUBLIC_URL}/assets/downloads/resume.pdf`}
-          download
-          className="bg-[#253551] inline-block text-white p-4 rounded-lg text-sm font-semibold"
+          href="https://www.upwork.com/freelancers/~01353b004ba45b9a74?mp_source=share"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 py-4 px-8 rounded-full m-2 bg-blue-900 font-bold text-white"
         >
-          {loading ? "Fetching..." : "Download Resume"}
+          Book
         </a>
       </div>
     </header>
