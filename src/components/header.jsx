@@ -1,22 +1,38 @@
 import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
-  const [loading, setLoading] = useState(false);
+  const [activeSection, setActiveSection] = useState("about");
 
-  const handleDownload = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  };
+  useEffect(() => {
+    const sections = document.querySelectorAll("section, #about, #projects, #contact");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 } // Adjust threshold to trigger based on how much of the section is visible
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
 
   return (
     <header className="lg:w-1/3 w-full lg:sticky lg:top-0 lg:h-screen p-4 lg:flex-shrink-0 lg:py-16 lg:ml-24">
       <div>
-        <h1 className="text-4xl font-bold text-slate-200 m-4">
-          Allan C. Kirui
-        </h1>
+        <h1 className="text-4xl font-bold text-slate-200 m-4">Allan C. Kirui</h1>
         <h3 className="text-lg font-medium text-slate-200 ml-4 mb-2">
           Software Engineer, Backend
         </h3>
@@ -25,28 +41,73 @@ const Header = () => {
           innovations
         </p>
       </div>
-      <nav class="nav px-10 hidden lg:block" aria-label="In-page jump links">
-        <ul class="mt-8 w-max">
+      <nav className="nav px-10 hidden lg:block" aria-label="In-page jump links">
+        <ul className="mt-8 w-max">
           <li>
-            <a class="group flex items-center py-3 active" href="#about">
-              <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
-              <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">
+            <a
+              className={`group flex items-center py-3 ${
+                activeSection === "about" ? "active-nav" : ""
+              }`}
+              href="#about"
+            >
+              <span
+                className={`nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 ${
+                  activeSection === "about" ? "bg-slate-200 w-16" : ""
+                }`}
+              ></span>
+              <span
+                className={`nav-text text-xs font-bold uppercase tracking-widest ${
+                  activeSection === "about"
+                    ? "text-slate-200"
+                    : "text-slate-500 group-hover:text-slate-200"
+                }`}
+              >
                 About
               </span>
             </a>
           </li>
           <li>
-            <a class="group flex items-center py-3 " href="#projects">
-              <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
-              <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">
+            <a
+              className={`group flex items-center py-3 ${
+                activeSection === "projects" ? "active-nav" : ""
+              }`}
+              href="#projects"
+            >
+              <span
+                className={`nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 ${
+                  activeSection === "projects" ? "bg-slate-200 w-16" : ""
+                }`}
+              ></span>
+              <span
+                className={`nav-text text-xs font-bold uppercase tracking-widest ${
+                  activeSection === "projects"
+                    ? "text-slate-200"
+                    : "text-slate-500 group-hover:text-slate-200"
+                }`}
+              >
                 Projects
               </span>
             </a>
           </li>
           <li>
-            <a class="group flex items-center py-3 " href="#contact">
-              <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
-              <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">
+            <a
+              className={`group flex items-center py-3 ${
+                activeSection === "contact" ? "active-nav" : ""
+              }`}
+              href="#contact"
+            >
+              <span
+                className={`nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 ${
+                  activeSection === "contact" ? "bg-slate-200 w-16" : ""
+                }`}
+              ></span>
+              <span
+                className={`nav-text text-xs font-bold uppercase tracking-widest ${
+                  activeSection === "contact"
+                    ? "text-slate-200"
+                    : "text-slate-500 group-hover:text-slate-200"
+                }`}
+              >
                 Contact
               </span>
             </a>
