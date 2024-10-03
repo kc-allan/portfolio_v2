@@ -67,7 +67,7 @@ const Projects = () => {
             <div className="pt-4 space-x-2">
               {project.technologies.map((tech, techIndex) => (
                 <span
-                  className="p-1 px-2 bg-teal-700 rounded-lg text-gray-300 text-white text-xs"
+                  className="inline-block p-1 px-2 m-1 bg-teal-700 rounded-lg text-gray-300 text-white text-xs"
                   key={techIndex}
                 >
                   {tech}
