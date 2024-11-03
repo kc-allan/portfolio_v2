@@ -1,12 +1,13 @@
-import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import { Github, Linkedin, Twitter, Calendar } from 'lucide-react';
 
 const Header = () => {
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section, #about, #projects, #contact");
-
+    // Update observer to target the sections directly
+    const sections = document.querySelectorAll('section[id]');
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -15,138 +16,92 @@ const Header = () => {
           }
         });
       },
-      { threshold: 0.6 } // Adjust threshold to trigger based on how much of the section is visible
+      { 
+        threshold: 0.3,
+        rootMargin: '-20% 0px -70% 0px' // Adjust these values to control when the section is considered "active"
+      }
     );
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => {
-      sections.forEach((section) => {
-        observer.unobserve(section);
-      });
-    };
+    sections.forEach((section) => observer.observe(section));
+    return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <header className="lg:w-1/3 w-full lg:sticky lg:top-0 lg:h-screen p-4 lg:flex-shrink-0 lg:py-16 lg:ml-24">
-      <div>
-        <h1 className="text-4xl font-bold text-slate-200 m-4">Allan C. Kirui</h1>
-        <h3 className="text-lg font-medium text-slate-200 ml-4 mb-2">
-          Software Engineer, Backend
-        </h3>
-        <p className="ml-4 mb-8 text-gray-400">
-          I strive to build the next big thing in software and pioneer tech
-          innovations
-        </p>
-      </div>
-      <nav className="nav px-10 hidden lg:block" aria-label="In-page jump links">
-        <ul className="mt-8 w-max">
-          <li>
-            <a
-              className={`group flex items-center py-3 ${
-                activeSection === "about" ? "active-nav" : ""
-              }`}
-              href="#about"
-            >
-              <span
-                className={`nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 ${
-                  activeSection === "about" ? "bg-slate-200 w-16" : ""
-                }`}
-              ></span>
-              <span
-                className={`nav-text text-xs font-bold uppercase tracking-widest ${
-                  activeSection === "about"
-                    ? "text-slate-200"
-                    : "text-slate-500 group-hover:text-slate-200"
-                }`}
+    <header className="lg:w-1/3 w-full lg:fixed lg:h-screen p-8 bg-gradient-to-b from-gray-900 to-gray-800">
+      <div className="space-y-6">
+        <div className="space-y-4">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 text-transparent bg-clip-text">
+            Allan C. Kirui
+          </h1>
+          <h3 className="text-xl font-medium text-gray-200">
+            Software Engineer, Backend
+          </h3>
+          <p className="text-gray-400 leading-relaxed">
+            Building the future through innovative software solutions and pioneering tech advancements
+          </p>
+        </div>
+
+        <nav className="hidden lg:block py-8" aria-label="In-page navigation">
+          <ul className="space-y-4">
+            {['about', 'projects', 'contact'].map((section) => (
+              <li key={section}>
+                <a
+                  href={`#${section}`}
+                  onClick={(e) => handleNavClick(e, section)}
+                  className={`group flex items-center space-x-4 py-2 transition-all duration-300 ${
+                    activeSection === section ? 'text-blue-400' : 'text-gray-400 hover:text-gray-200'
+                  }`}
+                >
+                  <span className={`h-[2px] w-8 transition-all duration-300 ${
+                    activeSection === section ? 'w-16 bg-blue-400' : 'bg-gray-600 group-hover:w-12 group-hover:bg-gray-400'
+                  }`} />
+                  <span className="text-sm font-medium uppercase tracking-wider">
+                    {section}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="space-y-6">
+          <div className="flex items-center space-x-4">
+            {[
+              { Icon: Twitter, href: 'https://x.com/allannnoo', label: 'Twitter' },
+              { Icon: Github, href: 'https://github.com/kc-allan', label: 'GitHub' },
+              { Icon: Linkedin, href: 'https://www.linkedin.com/in/allan-cheruiyot-214b6923a/', label: 'LinkedIn' }
+            ].map(({ Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                aria-label={label}
               >
-                About
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              className={`group flex items-center py-3 ${
-                activeSection === "projects" ? "active-nav" : ""
-              }`}
-              href="#projects"
-            >
-              <span
-                className={`nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 ${
-                  activeSection === "projects" ? "bg-slate-200 w-16" : ""
-                }`}
-              ></span>
-              <span
-                className={`nav-text text-xs font-bold uppercase tracking-widest ${
-                  activeSection === "projects"
-                    ? "text-slate-200"
-                    : "text-slate-500 group-hover:text-slate-200"
-                }`}
-              >
-                Projects
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              className={`group flex items-center py-3 ${
-                activeSection === "contact" ? "active-nav" : ""
-              }`}
-              href="#contact"
-            >
-              <span
-                className={`nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 ${
-                  activeSection === "contact" ? "bg-slate-200 w-16" : ""
-                }`}
-              ></span>
-              <span
-                className={`nav-text text-xs font-bold uppercase tracking-widest ${
-                  activeSection === "contact"
-                    ? "text-slate-200"
-                    : "text-slate-500 group-hover:text-slate-200"
-                }`}
-              >
-                Contact
-              </span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div className="my-6 py-2">
-        <a
-          href="https://x.com/allannnoo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mr-4"
-        >
-          <Twitter />
-        </a>
-        <a
-          href="https://github.com/kc-allan"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mr-4"
-        >
-          <GitHub />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/allan-cheruiyot-214b6923a/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mr-4"
-        >
-          <LinkedIn />
-        </a>
-        <a
-          href="https://calendly.com/kiruiallan"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-2 py-4 px-8 rounded-full m-2 bg-blue-900 font-bold text-white"
-        >
-          Book
-        </a>
+                <Icon size={20} />
+              </a>
+            ))}
+          </div>
+
+          <a
+            href="https://calendly.com/kiruiallan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center space-x-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-300"
+          >
+            <Calendar size={18} />
+            <span>Schedule a Call</span>
+          </a>
+        </div>
       </div>
     </header>
   );
