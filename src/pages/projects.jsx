@@ -29,7 +29,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="lg:py-8">
+    <section id="projects" className="py-16">
       <h2 className="text-3xl font-bold text-gray-200 mb-8">Featured Projects</h2>
       <div className="grid gap-8">
         {projects.map((project, index) => (
