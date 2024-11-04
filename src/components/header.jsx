@@ -1,45 +1,33 @@
-import { useState, useEffect } from 'react';
-import { Calendar } from 'lucide-react';
-import { GitHub, LinkedIn, Twitter } from '@mui/icons-material';
+import { useState, useEffect } from "react";
+import { Calendar } from "lucide-react";
+import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
 
 const Header = () => {
-  const [activeSection, setActiveSection] = useState('about');
+  const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
-    // Debug: Log all sections found
-    const sections = document.querySelectorAll('section[id]');
-    console.log('Found sections:', Array.from(sections).map(s => s.id));
-    
+    const sections = document.querySelectorAll("section[id]");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // Debug: Log intersection events
-          console.log('Intersection:', {
-            id: entry.target.id,
-            isIntersecting: entry.isIntersecting,
-            ratio: entry.intersectionRatio
-          });
-          
           if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
             setActiveSection(entry.target.id);
           }
         });
       },
-      { 
-        threshold: [0.1, 0.2, 0.3, 0.4, 0.5],  // Multiple thresholds for better detection
-        rootMargin: '-10% 0px -40% 0px'  // Less aggressive margins
+      {
+        threshold: [0.1, 0.2, 0.3, 0.4, 0.5],
+        rootMargin: "-10% 0px -40% 0px",
       }
     );
 
-    // Debug: Log when we start observing each section
     sections.forEach((section) => {
-      console.log('Starting to observe:', section.id);
       observer.observe(section);
     });
 
     return () => {
       sections.forEach((section) => observer.unobserve(section));
-      console.log('Cleanup: stopped observing sections');
     };
   }, []);
 
@@ -47,8 +35,7 @@ const Header = () => {
     e.preventDefault();
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      // Immediately update active section on click
+      section.scrollIntoView({ behavior: "smooth" });
       setActiveSection(sectionId);
     }
   };
@@ -64,27 +51,30 @@ const Header = () => {
             Software Engineer, Backend
           </h3>
           <p className="text-gray-400 leading-relaxed">
-            Building the future through innovative software solutions and pioneering tech advancements
+            Building the future through innovative software solutions and
+            pioneering tech advancements
           </p>
         </div>
 
         <nav className="hidden lg:block py-8" aria-label="In-page navigation">
           <ul className="space-y-4">
-            {['about', 'projects', 'contact'].map((section) => (
+            {["about", "projects", "contact"].map((section) => (
               <li key={section}>
                 <a
                   href={`#${section}`}
                   onClick={(e) => handleNavClick(e, section)}
-                  className={`group flex items-center space-x-4 py-2 transition-all duration-300 ${
-                    activeSection === section ? 'text-blue-400' : 'text-gray-400 hover:text-gray-200'
+                  className={`group flex items-center space-x-2 py-2 transition-all duration-300 ${
+                    activeSection === section
+                      ? "text-blue-400"
+                      : "text-gray-400 hover:text-gray-200"
                   }`}
                 >
                   <div className="w-16">
                     <div
                       className={`h-[2px] transition-all duration-300 ${
-                        activeSection === section 
-                          ? 'w-16 bg-blue-400' 
-                          : 'w-8 bg-gray-600 group-hover:w-12 group-hover:bg-gray-400'
+                        activeSection === section
+                          ? "w-12 bg-blue-400"
+                          : "w-8 bg-gray-600 group-hover:w-12 group-hover:bg-gray-400"
                       }`}
                     />
                   </div>
@@ -100,9 +90,21 @@ const Header = () => {
         <div className="space-y-6">
           <div className="flex items-center space-x-4">
             {[
-              { Icon: Twitter, href: 'https://x.com/allannnoo', label: 'Twitter' },
-              { Icon: GitHub, href: 'https://github.com/kc-allan', label: 'GitHub' },
-              { Icon: LinkedIn, href: 'https://www.linkedin.com/in/allan-cheruiyot-214b6923a/', label: 'LinkedIn' }
+              {
+                Icon: Twitter,
+                href: "https://x.com/allannnoo",
+                label: "Twitter",
+              },
+              {
+                Icon: GitHub,
+                href: "https://github.com/kc-allan",
+                label: "GitHub",
+              },
+              {
+                Icon: LinkedIn,
+                href: "https://www.linkedin.com/in/allan-cheruiyot-214b6923a/",
+                label: "LinkedIn",
+              },
             ].map(({ Icon, href, label }) => (
               <a
                 key={label}
