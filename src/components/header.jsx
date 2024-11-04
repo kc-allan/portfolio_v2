@@ -1,29 +1,46 @@
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, Twitter, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
+import { GitHub, LinkedIn, Twitter } from '@mui/icons-material';
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
-    // Update observer to target the sections directly
+    // Debug: Log all sections found
     const sections = document.querySelectorAll('section[id]');
+    console.log('Found sections:', Array.from(sections).map(s => s.id));
     
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          // Debug: Log intersection events
+          console.log('Intersection:', {
+            id: entry.target.id,
+            isIntersecting: entry.isIntersecting,
+            ratio: entry.intersectionRatio
+          });
+          
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
             setActiveSection(entry.target.id);
           }
         });
       },
       { 
-        threshold: 0.3,
-        rootMargin: '-20% 0px -70% 0px' // Adjust these values to control when the section is considered "active"
+        threshold: [0.1, 0.2, 0.3, 0.4, 0.5],  // Multiple thresholds for better detection
+        rootMargin: '-10% 0px -40% 0px'  // Less aggressive margins
       }
     );
 
-    sections.forEach((section) => observer.observe(section));
-    return () => sections.forEach((section) => observer.unobserve(section));
+    // Debug: Log when we start observing each section
+    sections.forEach((section) => {
+      console.log('Starting to observe:', section.id);
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+      console.log('Cleanup: stopped observing sections');
+    };
   }, []);
 
   const handleNavClick = (e, sectionId) => {
@@ -31,6 +48,8 @@ const Header = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+      // Immediately update active section on click
+      setActiveSection(sectionId);
     }
   };
 
@@ -60,9 +79,15 @@ const Header = () => {
                     activeSection === section ? 'text-blue-400' : 'text-gray-400 hover:text-gray-200'
                   }`}
                 >
-                  <span className={`h-[2px] w-8 transition-all duration-300 ${
-                    activeSection === section ? 'w-16 bg-blue-400' : 'bg-gray-600 group-hover:w-12 group-hover:bg-gray-400'
-                  }`} />
+                  <div className="w-16">
+                    <div
+                      className={`h-[2px] transition-all duration-300 ${
+                        activeSection === section 
+                          ? 'w-16 bg-blue-400' 
+                          : 'w-8 bg-gray-600 group-hover:w-12 group-hover:bg-gray-400'
+                      }`}
+                    />
+                  </div>
                   <span className="text-sm font-medium uppercase tracking-wider">
                     {section}
                   </span>
@@ -76,8 +101,8 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             {[
               { Icon: Twitter, href: 'https://x.com/allannnoo', label: 'Twitter' },
-              { Icon: Github, href: 'https://github.com/kc-allan', label: 'GitHub' },
-              { Icon: Linkedin, href: 'https://www.linkedin.com/in/allan-cheruiyot-214b6923a/', label: 'LinkedIn' }
+              { Icon: GitHub, href: 'https://github.com/kc-allan', label: 'GitHub' },
+              { Icon: LinkedIn, href: 'https://www.linkedin.com/in/allan-cheruiyot-214b6923a/', label: 'LinkedIn' }
             ].map(({ Icon, href, label }) => (
               <a
                 key={label}
