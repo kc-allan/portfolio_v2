@@ -15,7 +15,7 @@ const HomePage = () => {
         <main className="lg:w-2/3 lg:ml-auto lg:h-screen lg:overflow-y-auto">
           <div className="max-w-4xl mx-auto px-6 py-12">
             {/* Each section needs a proper id and min-height to ensure smooth scrolling */}
-            <section id="about" className="py-8 lg:pt-24">
+            <section id="about" className="pb-8">
               <h2 className="text-3xl font-bold text-gray-200 mb-8">
                 About Me
               </h2>
@@ -66,9 +66,7 @@ const HomePage = () => {
                 </button>
               </div>
             </section>
-
             <Projects />
-
             <Footer />
           </div>
         </main>
