@@ -39,12 +39,12 @@ const Projects = () => {
           >
             <div className="flex flex-col lg:flex-row gap-6 p-6">
               <div className="lg:w-2/3 space-y-4">
-                <div className="flex items-center space-x-2">
-                  <h3 className="text-xl font-semibold text-gray-200">
+                <a href='/' className="flex items-center space-x-2">
+                  <h3 className="text-xl font-semibold text-gray-200 hover:text-blue-400">
                     {project.name}
                   </h3>
                   <ExternalLink className="w-4 h-4 text-gray-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </div>
+                </a>
                 
                 <p className="text-gray-400 leading-relaxed">
                   {project.description}
