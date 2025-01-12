@@ -37,11 +37,11 @@ const Footer = () => {
                 <span>+254 112 391 809</span>
               </a>
               <a
-                href="mailto:info@kiruiallan.tech"
+                href="mailto:info@kiruiallan.me"
                 className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors duration-300"
               >
                 <Mail size={18} />
-                <span>info@kiruiallan.tech</span>
+                <span>info@kiruiallan.me</span>
               </a>
             </div>
           </div>
