@@ -5,7 +5,7 @@ const Services = () => {
         <h1 className="text-4xl font-bold">Services</h1>
         <div className="flex flex-col md:flex-row gap-10 mt-10">
           <div className="flex flex-col items-center">
-            <img src={`${process.env.PUBLIC_URL}/assets/images/web-development.jpg`} alt="Web Development" />
+            <img loading="lazy" src={`${process.env.PUBLIC_URL}/assets/images/web-development.jpg`} alt="Web Development" />
             <h2 className="text-2xl font-semibold mt-5">Web Development</h2>
             <p className="text-center mt-5">
               Crafting modern, responsive websites that blend aesthetic appeal
@@ -14,7 +14,7 @@ const Services = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <img src={`${process.env.PUBLIC_URL}/assets/images/api.png`} alt="API Development and Integration" />
+            <img loading="lazy" src={`${process.env.PUBLIC_URL}/assets/images/api.png`} alt="API Development and Integration" />
             <h2 className="text-2xl font-semibold mt-5">
               API Development and Integration
             </h2>
@@ -25,7 +25,7 @@ const Services = () => {
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <img src={`${process.env.PUBLIC_URL}/assets/images/consulting.jpg`} alt="Software Consulting" />
+            <img loading="lazy" src={`${process.env.PUBLIC_URL}/assets/images/consulting.jpg`} alt="Software Consulting" />
             <h2 className="text-2xl font-semibold mt-5">Software Consulting</h2>
             <p className="text-center mt-5">
               Providing expert advice and strategies to improve your software
