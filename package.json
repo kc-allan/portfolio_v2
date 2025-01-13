@@ -4,10 +4,10 @@
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "*",
-    "@cloudinary/react": "^1.13.0",
+    "@cloudinary/react": "^1.13.1",
     "@cloudinary/url-gen": "^1.21.0",
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^5.16.4",
     "@mui/material": "^5.16.4",
     "@testing-library/jest-dom": "^5.17.0",
@@ -16,9 +16,7 @@
     "lucide-react": "^0.454.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
-    "react-scroll": "^1.9.0",
-    "web-vitals": "^2.1.4"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -45,6 +43,9 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.13"
+    "@babel/core": "^7.26.0",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
+    "tailwindcss": "^3.4.17"
   }
 }
