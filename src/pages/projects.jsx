@@ -3,31 +3,34 @@ import { ExternalLink } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      name: "Brainwave Campus",
+      name: "Paw Partner",
+      meta: "Startup",
+      submeta: "Launching Soon",
       description:
-        "Collaborative platform for peers to connect and share thoughts, ideas, and resources. The platform is built for students and work colleagues looking to connect outside the office.",
-      thumbnail: `${process.env.PUBLIC_URL}/assets/images/brainwave.png`,
-      technologies: ["Flask", "TailwindCSS", "Zoom API"],
+        "A platform that connects pet owners to pet sitters and pet care services including vets. Users can book pet sitters, groomers, and other pet care services.",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/images/paw-partner.webp`,
+      technologies: ["React", "TypeScript", "Django"],
+    },
+
+    {
+      name: "AI Learning Hub",
+      description:
+        "A platform that provides a wide range of courses and resources for students and professionals looking to learn more about Artificial Intelligence and Machine Learning.",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/images/ai-learning-hub.webp`,
+      technologies: ["React", "Django", "TailwindCSS", "Stripe API"],
     },
     {
       name: "CleanPro Services",
       description:
         "Platform that connects home workers to clients that may need cleaning or grooming services around the household",
-      thumbnail: `${process.env.PUBLIC_URL}/assets/images/cleanpro.png`,
+      thumbnail: `${process.env.PUBLIC_URL}/assets/images/cleanpro.webp`,
       technologies: ["React", "Flask", "TailwindCSS", "MPESA Integration"],
-    },
-    {
-      name: "Bridge Health",
-      description:
-        "Web platform tailored for expectant mothers, prioritizing privacy while offering personalized healthcare management. Expectant mothers can create secure profiles on the platform.",
-      thumbnail: `${process.env.PUBLIC_URL}/assets/images/bridgehealth.png`,
-      technologies: ["React", "PHP", "TailwindCSS"],
     },
     {
       name: "FarmTrace",
       description:
         "A system designed to ensure the integrity of fertilizers by tracking their movement in the supply chain. A seamless integration of QR codes is implemented to verify product information and authenticity.",
-      thumbnail: `${process.env.PUBLIC_URL}/assets/images/farmtrace.png`,
+      thumbnail: `${process.env.PUBLIC_URL}/assets/images/farmtrace.webp`,
       technologies: ["Flask", "TailwindCSS"],
     },
   ];
@@ -45,11 +48,22 @@ const Projects = () => {
           >
             <div className="flex flex-col lg:flex-row gap-6 p-6">
               <div className="lg:w-2/3 space-y-4">
+                {/* eslint-disable-next-line */}
                 <a href="/" className="flex items-center space-x-2">
                   <h3 className="text-xl font-semibold text-gray-200 hover:text-blue-400">
                     {project.name}
                   </h3>
                   <ExternalLink className="w-4 h-4 text-gray-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  {project.meta && (
+                    <span className="bg-orange-800 shadow-md text-slate-300 rounded-full px-2 text-xs font-semibold">
+                      {project.meta}
+                    </span>
+                  )}
+                  {project.submeta && (
+                    <span className="bg-green-800 shadow-md text-slate-300 rounded-full px-2 text-xs font-semibold">
+                      {project.submeta}
+                    </span>
+                  )}
                 </a>
 
                 <p className="text-gray-400 leading-relaxed">
