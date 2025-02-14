@@ -3,7 +3,7 @@ import { ExternalLink } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      name: "Paw Partner",
+      name: "Whiskr",
       meta: "Startup",
       submeta: "Launching Soon",
       description:
