@@ -3,17 +3,19 @@ import { ExternalLink } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      name: "Whiskr",
+      name: "StudentX",
       meta: "Startup",
-      submeta: "Launching Soon",
+      // submeta: "Launching Soon",
+      url: "https://studentx.co.ke",
       description:
-        "A platform that connects pet owners to pet sitters and pet care services including vets. Users can book pet sitters, groomers, and other pet care services.",
+        "A coupon sharing and management platform that gives access to thousands of verified student deals from verified brands. All inclusive of a comprehensive portal for partnered brands",
       thumbnail: `${process.env.PUBLIC_URL}/assets/images/paw-partner.webp`,
-      technologies: ["React", "TypeScript", "Django"],
+      technologies: ["React", "Python/Flask", "Google Analytics", "KYC"],
     },
 
     {
       name: "AI Learning Hub",
+      url: "#",
       description:
         "A platform that provides a wide range of courses and resources for students and professionals looking to learn more about Artificial Intelligence and Machine Learning.",
       thumbnail: `${process.env.PUBLIC_URL}/assets/images/ai-learning-hub.webp`,
@@ -21,6 +23,7 @@ const Projects = () => {
     },
     {
       name: "CleanPro Services",
+      url: "#",
       description:
         "Platform that connects home workers to clients that may need cleaning or grooming services around the household",
       thumbnail: `${process.env.PUBLIC_URL}/assets/images/cleanpro.webp`,
@@ -28,6 +31,7 @@ const Projects = () => {
     },
     {
       name: "FarmTrace",
+      url: "#",
       description:
         "A system designed to ensure the integrity of fertilizers by tracking their movement in the supply chain. A seamless integration of QR codes is implemented to verify product information and authenticity.",
       thumbnail: `${process.env.PUBLIC_URL}/assets/images/farmtrace.webp`,
@@ -49,7 +53,7 @@ const Projects = () => {
             <div className="flex flex-col lg:flex-row gap-6 p-6">
               <div className="lg:w-2/3 space-y-4">
                 {/* eslint-disable-next-line */}
-                <a href="/" className="flex items-center space-x-2">
+                <a href={project.url} className="flex items-center space-x-2">
                   <h3 className="text-xl font-semibold text-gray-200 hover:text-blue-400">
                     {project.name}
                   </h3>
