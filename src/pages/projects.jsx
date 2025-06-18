@@ -53,7 +53,7 @@ const Projects = () => {
             <div className="flex flex-col lg:flex-row gap-6 p-6">
               <div className="lg:w-2/3 space-y-4">
                 {/* eslint-disable-next-line */}
-                <a href={project.url} className="flex items-center space-x-2">
+                <a href={project.url} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
                   <h3 className="text-xl font-semibold text-gray-200 hover:text-blue-400">
                     {project.name}
                   </h3>
