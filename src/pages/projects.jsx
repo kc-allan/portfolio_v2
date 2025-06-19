@@ -9,13 +9,22 @@ const Projects = () => {
       url: "https://studentx.co.ke",
       description:
         "A coupon sharing and management platform that gives access to thousands of verified student deals from verified brands. All inclusive of a comprehensive portal for partnered brands",
-      thumbnail: `${process.env.PUBLIC_URL}/assets/images/paw-partner.webp`,
+      thumbnail: `${process.env.PUBLIC_URL}/assets/images/studentx-project-thumbnail.webp`,
       technologies: ["React", "Python/Flask", "Google Analytics", "KYC"],
     },
-
+    {
+      name: "Whiskr",
+      meta: "Startup",
+      submeta: "Launching Soon",
+      url: "https://whiskr.kiruiallan.me",
+      description:
+        "A platform that connects pet owners to pet sitters and pet care services including vets. Users can book pet sitters, groomers, and other pet care services.",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/images/paw-partner.webp`,
+      technologies: ["React", "TypeScript", "Django"],
+    },
     {
       name: "AI Learning Hub",
-      url: "#",
+      url: "https://ai-learning-hub.netlify.app",
       description:
         "A platform that provides a wide range of courses and resources for students and professionals looking to learn more about Artificial Intelligence and Machine Learning.",
       thumbnail: `${process.env.PUBLIC_URL}/assets/images/ai-learning-hub.webp`,
