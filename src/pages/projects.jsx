@@ -4,7 +4,7 @@ const Projects = () => {
   const projects = [
     {
       name: "StudentX",
-      meta: "Startup",
+      meta: "E-commerce",
       // submeta: "Launching Soon",
       url: "https://studentx.co.ke",
       description:
@@ -24,6 +24,7 @@ const Projects = () => {
     },
     {
       name: "AI Learning Hub",
+      meta: "EdTech",
       url: "https://ailearninghub.kiruiallan.me",
       description:
         "A platform that provides a wide range of courses and resources for students and professionals looking to learn more about Artificial Intelligence and Machine Learning.",
@@ -32,6 +33,7 @@ const Projects = () => {
     },
     {
       name: "FarmTrace",
+      meta: "Logistics",
       url: "https://farmtrace.kiruiallan.me",
       description:
         "A system designed to ensure the integrity of fertilizers by tracking their movement in the supply chain. A seamless integration of QR codes is implemented to verify product information and authenticity.",
@@ -40,6 +42,7 @@ const Projects = () => {
     },
     {
       name: "CleanPro Services",
+      meta: "Service",
       url: "#",
       description:
         "Platform that connects home workers to clients that may need cleaning or grooming services around the household",
