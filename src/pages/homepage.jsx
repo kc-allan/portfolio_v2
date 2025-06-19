@@ -21,15 +21,14 @@ const HomePage = () => {
               </h2>
               <div className="space-y-6 text-gray-400">
                 <p className="leading-relaxed">
-                  Hey there! I'm Allan, a software engineer with a passion for
+                  Hey there, I'm Batman!...just kidding. I'm Allan, a software engineer with a passion for
                   creating innovative solutions and a love for problem-solving.
                 </p>
 
                 <p className="leading-relaxed">
-                  Based in Nairobi, Kenya, I'm a curious tech enthusiast. I've
+                  With 3+ years of experience, I've
                   honed my skills in various programming languages and
-                  frameworks. But beyond the code, I'm a dedicated learner and
-                  an avid explorer.
+                  frameworks. But beyond the code, I'm a continuous learner, an avid explorer and a lover of Caïssa's game.
                 </p>
 
                 <div
@@ -40,16 +39,15 @@ const HomePage = () => {
                   }`}
                 >
                   <p className="leading-relaxed">
-                    I thrive on the excitement of new challenges, from
-                    developing groundbreaking software solutions to diving into
-                    the latest tech trends and events.
+                    I thrive on the excitement of new challenges,
+                    developing pet projects for the fun of bug hunting, indie-hacking real-world solutions, diving into
+                    the latest tech events, hackathons and everything in between.
                   </p>
 
                   <p className="leading-relaxed">
                     In the long run, I aim to make significant strides in
-                    cybersecurity, protecting the digital world from threats and
-                    ensuring a safer online environment. My journey is driven by
-                    a passion for technology and a commitment to making a
+                    software research and development as well as cybersecurity. My journey is driven by
+                    my passion for tech and a commitment to making a
                     positive impact.
                   </p>
 
