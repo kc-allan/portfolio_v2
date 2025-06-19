@@ -24,11 +24,19 @@ const Projects = () => {
     },
     {
       name: "AI Learning Hub",
-      url: "https://ai-learning-hub.netlify.app",
+      url: "https://ailearninghub.kiruiallan.me",
       description:
         "A platform that provides a wide range of courses and resources for students and professionals looking to learn more about Artificial Intelligence and Machine Learning.",
       thumbnail: `${process.env.PUBLIC_URL}/assets/images/ai-learning-hub.webp`,
       technologies: ["React", "Django", "TailwindCSS", "Stripe API"],
+    },
+    {
+      name: "FarmTrace",
+      url: "https://farmtrace.kiruiallan.me",
+      description:
+        "A system designed to ensure the integrity of fertilizers by tracking their movement in the supply chain. A seamless integration of QR codes is implemented to verify product information and authenticity.",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/images/farmtrace.webp`,
+      technologies: ["Flask", "TailwindCSS"],
     },
     {
       name: "CleanPro Services",
@@ -37,14 +45,6 @@ const Projects = () => {
         "Platform that connects home workers to clients that may need cleaning or grooming services around the household",
       thumbnail: `${process.env.PUBLIC_URL}/assets/images/cleanpro.webp`,
       technologies: ["React", "Flask", "TailwindCSS", "MPESA Integration"],
-    },
-    {
-      name: "FarmTrace",
-      url: "#",
-      description:
-        "A system designed to ensure the integrity of fertilizers by tracking their movement in the supply chain. A seamless integration of QR codes is implemented to verify product information and authenticity.",
-      thumbnail: `${process.env.PUBLIC_URL}/assets/images/farmtrace.webp`,
-      technologies: ["Flask", "TailwindCSS"],
     },
   ];
 
