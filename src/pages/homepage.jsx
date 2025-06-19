@@ -21,14 +21,14 @@ const HomePage = () => {
               </h2>
               <div className="space-y-6 text-gray-400">
                 <p className="leading-relaxed">
-                  Hey there, I'm Batman!...just kidding. I'm Allan, a software engineer with a passion for
+                  Hey there, I'm Batman!...just kidding. I'm Allan, a software developer with a passion for
                   creating innovative solutions and a love for problem-solving.
                 </p>
 
                 <p className="leading-relaxed">
                   With 3+ years of experience, I've
                   honed my skills in various programming languages and
-                  frameworks. But beyond the code, I'm a continuous learner, an avid explorer and a lover of Caïssa's game.
+                  frameworks but beyond the code, I'm a continuous learner, an avid explorer and a lover of Caïssa's game.
                 </p>
 
                 <div
