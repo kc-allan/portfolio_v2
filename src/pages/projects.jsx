@@ -32,13 +32,13 @@ const Projects = () => {
       technologies: ["React", "Django", "TailwindCSS", "Stripe API"],
     },
     {
-      name: "FarmTrace",
+      name: "Linkafrex",
       meta: "Logistics",
-      url: "https://farmtrace.kiruiallan.me",
+      url: "https://linkafrex.com",
       description:
-        "A system designed to ensure the integrity of fertilizers by tracking their movement in the supply chain. A seamless integration of QR codes is implemented to verify product information and authenticity.",
-      thumbnail: `${process.env.PUBLIC_URL}/assets/images/farmtrace.webp`,
-      technologies: ["Flask", "TailwindCSS"],
+        "Linkafrex is a logistics and errand service allowing for customers to book parcel deliveries across countries as well as find riders to complete errands for them. An integrated portal provides access for both staff, customers and riders to efficiently book and track services in real time",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/images/linkafrex.webp`,
+      technologies: ["Django", "React.js"],
     },
     {
       name: "CleanPro Services",
