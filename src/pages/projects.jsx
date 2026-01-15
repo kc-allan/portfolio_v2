@@ -13,6 +13,15 @@ const Projects = () => {
       technologies: ["React", "Python/Flask", "Google Analytics", "KYC"],
     },
     {
+      name: "Linkafrex",
+      meta: "Logistics",
+      url: "https://linkafrex.com",
+      description:
+        "Linkafrex is a logistics and errand service platform allowing for customers to book parcel deliveries across countries as well as find riders to complete errands for them. An integrated portal provides access for both staff, customers and riders to efficiently book and track services",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/images/linkafrex.webp`,
+      technologies: ["Django", "React.js"],
+    },
+    {
       name: "Whiskr",
       meta: "Startup",
       submeta: "Launching Soon",
@@ -30,15 +39,6 @@ const Projects = () => {
         "A platform that provides a wide range of courses and resources for students and professionals looking to learn more about Artificial Intelligence and Machine Learning.",
       thumbnail: `${process.env.PUBLIC_URL}/assets/images/ai-learning-hub.webp`,
       technologies: ["React", "Django", "TailwindCSS", "Stripe API"],
-    },
-    {
-      name: "Linkafrex",
-      meta: "Logistics",
-      url: "https://linkafrex.com",
-      description:
-        "Linkafrex is a logistics and errand service allowing for customers to book parcel deliveries across countries as well as find riders to complete errands for them. An integrated portal provides access for both staff, customers and riders to efficiently book and track services in real time",
-      thumbnail: `${process.env.PUBLIC_URL}/assets/images/linkafrex.webp`,
-      technologies: ["Django", "React.js"],
     },
     {
       name: "CleanPro Services",
